@@ -1,37 +1,120 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
     background: #0b1020;
     color: white;
 }
 
 header {
-    padding: 20px;
     background: #131a2b;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 20px 40px;
+    border-bottom: 1px solid #27324d;
 }
 
-h1 {
+header h1 {
+    margin: 0;
     color: #7c5cff;
+    font-size: 32px;
 }
 
-input {
-    background: #202a42;
-    border: none;
-    padding: 10px;
-    border-radius: 8px;
-    color: white;
-}
-
-#app {
-    padding: 30px;
+main {
+    padding: 40px;
+    max-width: 900px;
+    margin: auto;
 }
 
 .card {
     background: #131a2b;
-    padding: 20px;
-    border-radius: 12px;
-    margin-bottom: 15px;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 14px;
+    border: 1px solid #27324d;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.card h2 {
+    margin-top: 0;
+    color: #ffffff;
+}
+
+input {
+    display: block;
+    width: 90%;
+    max-width: 400px;
+    margin: 12px 0;
+    padding: 12px;
+
+    background: #202a42;
+    color: white;
+
+    border: 1px solid #34415f;
+    border-radius: 8px;
+
+    outline: none;
+}
+
+input:focus {
+    border-color: #7c5cff;
+}
+
+button {
+    margin-top: 10px;
+    padding: 12px 22px;
+
+    background: #7c5cff;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+    font-size: 15px;
+
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #6847ff;
+    transform: translateY(-2px);
+}
+
+.profile {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #7c5cff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.repo {
+    background: #202a42;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.repo:hover {
+    background: #283451;
+}
+
+a {
+    color: #3fd6ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }

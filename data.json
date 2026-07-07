@@ -1,0 +1,22 @@
+{
+    "profiles": [
+        {
+            "id": "A82KD1",
+            "username": "jos3ph",
+            "bio": "Developer at Jergan Studio",
+            "repos": [
+                "Warped",
+                "JergCraft"
+            ]
+        }
+    ],
+
+    "repositories": [
+        {
+            "id": "R91PX2",
+            "owner": "jos3ph",
+            "name": "Warped",
+            "description": "Alternative code hosting platform"
+        }
+    ]
+}

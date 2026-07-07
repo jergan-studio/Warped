@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b1020;
+    color: white;
+}
+
+header {
+    padding: 20px;
+    background: #131a2b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    color: #7c5cff;
+}
+
+input {
+    background: #202a42;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+}
+
+#app {
+    padding: 30px;
+}
+
+.card {
+    background: #131a2b;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}

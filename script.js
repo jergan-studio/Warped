@@ -1,51 +1,83 @@
-const app = document.getElementById("app");
+function generateID(){
+    return Math.random()
+    .toString(36)
+    .substring(2,8)
+    .toUpperCase();
+}
 
-const params = new URLSearchParams(window.location.search);
 
-const P = params.get("P");
-const R = params.get("R");
+function createProfile(){
 
-fetch("data.json")
-.then(res => res.json())
-.then(data => {
+    let username =
+    document.getElementById("username").value;
 
-    if(P){
+    let bio =
+    document.getElementById("bio").value;
 
-        let user = data.profiles.find(
-            p => p.id === P
-        );
 
-        if(user){
-            app.innerHTML = `
-            <div class="card">
-                <h2>${user.username}</h2>
-                <p>${user.bio}</p>
-                <h3>Repositories</h3>
-                ${user.repos.join("<br>")}
-            </div>`;
-        }
+    let id = generateID();
 
-    } else if(R){
 
-        let repo = data.repositories.find(
-            r => r.id === R
-        );
+    let profile = {
+        id:id,
+        username:username,
+        bio:bio,
+        repos:[]
+    };
 
-        if(repo){
-            app.innerHTML = `
-            <div class="card">
-                <h2>${repo.owner}/${repo.name}</h2>
-                <p>${repo.description}</p>
-            </div>`;
-        }
 
-    } else {
+    let profiles =
+    JSON.parse(localStorage.profiles || "[]");
 
-        app.innerHTML = `
-        <div class="card">
-            <h2>Welcome to Warped</h2>
-            <p>Build. Share. Collaborate.</p>
-        </div>`;
-    }
 
-});
+    profiles.push(profile);
+
+    localStorage.profiles =
+    JSON.stringify(profiles);
+
+
+    alert(
+    "Profile created!\n\nURL:\n?P="+id
+    );
+
+}
+
+
+
+function createRepo(){
+
+    let name =
+    document.getElementById("repoName").value;
+
+    let owner =
+    document.getElementById("owner").value;
+
+
+    let id = generateID();
+
+
+    let repo = {
+
+        id:id,
+        owner:owner,
+        name:name,
+        files:[]
+
+    };
+
+
+    let repos =
+    JSON.parse(localStorage.repos || "[]");
+
+
+    repos.push(repo);
+
+    localStorage.repos =
+    JSON.stringify(repos);
+
+
+    alert(
+    "Repository created!\n\nURL:\n?R="+id
+    );
+
+}

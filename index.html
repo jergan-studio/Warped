@@ -6,14 +6,43 @@
 </head>
 
 <body>
-    <header>
-        <h1>Warped</h1>
-        <input id="search" placeholder="Search...">
-    </header>
 
-    <main id="app">
-    </main>
+<header>
+    <h1>Warped</h1>
+</header>
 
-    <script src="script.js"></script>
+<main id="app">
+
+<div class="card">
+<h2>Create Profile</h2>
+
+<input id="username" placeholder="Username">
+<input id="bio" placeholder="Bio">
+
+<button onclick="createProfile()">
+Create Profile
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h2>Create Repository</h2>
+
+<input id="repoName" placeholder="Repository name">
+<input id="owner" placeholder="Owner">
+
+<button onclick="createRepo()">
+Create Repository
+</button>
+
+</div>
+
+
+</main>
+
+<script src="script.js"></script>
+
 </body>
 </html>

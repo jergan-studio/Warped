@@ -1,48 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Warped</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Warped Drive</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-<header>
-    <h1>Warped</h1>
+<div id="privacyOverlay" class="privacy-overlay">
+  <div class="privacy-card"><div class="lock">🔒</div><h2>Warped is private</h2><p>Your files stay in this browser on this device.</p><button id="unlockBtn">Enter Drive</button></div>
+</div>
+<div id="recordBlackout" class="record-blackout hidden"><div class="record-status">● RECORDING</div></div>
+<header class="topbar">
+  <div class="brand">☁ <span>Warped</span></div>
+  <div class="search"><input id="searchInput" placeholder="Search in Warped Drive"></div>
+  <button id="recordBtn" class="record-btn">● Record Tab</button>
 </header>
-
-<main id="app">
-
-<div class="card">
-<h2>Create Profile</h2>
-
-<input id="username" placeholder="Username">
-<input id="bio" placeholder="Bio">
-
-<button onclick="createProfile()">
-Create Profile
-</button>
-
+<div class="layout">
+  <aside class="sidebar">
+    <button id="newBtn" class="new-btn">＋ New</button>
+    <nav>
+      <button class="nav active" data-view="drive">▣ My Drive</button>
+      <button class="nav" data-view="recent">◷ Recent</button>
+      <button class="nav" data-view="starred">☆ Starred</button>
+      <button class="nav" data-view="trash">♢ Trash</button>
+    </nav>
+    <div class="storage"><b>Private storage</b><div class="storage-bar"><span id="storageFill"></span></div><small id="storageText">0 files stored locally</small></div>
+  </aside>
+  <main>
+    <div class="toolbar"><div><h1 id="viewTitle">My Drive</h1><p id="crumb">Private • This device</p></div><label class="upload-btn">Upload files<input id="fileInput" type="file" multiple hidden></label></div>
+    <div id="dropZone" class="drop-zone">Drop files here to add them to your private drive</div>
+    <section id="fileGrid" class="file-grid"></section>
+    <div id="empty" class="empty hidden"><div>☁</div><h2>No files here</h2><p>Upload a file or create a folder to get started.</p></div>
+  </main>
 </div>
-
-
-<div class="card">
-
-<h2>Create Repository</h2>
-
-<input id="repoName" placeholder="Repository name">
-<input id="owner" placeholder="Owner">
-
-<button onclick="createRepo()">
-Create Repository
-</button>
-
-</div>
-
-
-</main>
-
+<div id="newMenu" class="new-menu hidden"><button id="folderBtn">📁 New folder</button></div>
+<div id="toast"></div>
 <script src="script.js"></script>
-
 </body>
 </html>
